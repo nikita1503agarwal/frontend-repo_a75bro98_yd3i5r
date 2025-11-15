@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Auction – Setup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <span class="badge">Premium</span>
+        IPL Style Auction – Setup
+      </div>
+      <a class="badge" href="/auction-live.html">Go to Live Screen</a>
+    </div>
+
+    <div class="card form-section">
+      <h2 class="section-title">Auction Configuration</h2>
+      <p class="helper">Create teams, upload players CSV and start the live auction.</p>
+
+      <div class="grid grid-2" style="margin-top:16px">
+        <div>
+          <label>Number of Teams (3-8)</label>
+          <select id="teamCount" class="select" min="3" max="8">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+          <div id="teamsContainer" style="margin-top:14px; display:grid; gap:10px"></div>
+        </div>
+        <div>
+          <label>Upload Players CSV</label>
+          <input id="csvFile" type="file" accept=".csv" class="file" />
+          <p class="helper" style="margin-top:8px">Columns: name, category, basePrice, rating, photo</p>
+          <div id="csvPreview" class="helper" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px; display:flex; gap:10px; align-items:center">
+        <button id="startAuction" class="button">Start Auction</button>
+        <button id="loadDemo" class="button secondary">Load Demo Data</button>
+      </div>
+
+      <p class="footer-note">Logos auto-assigned by order: Red, Blue, Green, Orange, Purple, Yellow, Black, White.</p>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

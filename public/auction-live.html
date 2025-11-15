@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Auction – Live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <span class="badge">Live</span>
+        IPL Style Auction – Live Auction
+      </div>
+      <div style="display:flex; gap:8px">
+        <button class="button secondary" id="openRemaining">Remaining Players</button>
+        <a class="badge" href="/auction.html">Back to Setup</a>
+      </div>
+    </div>
+
+    <div class="layout">
+      <!-- Left: Player card + timer -->
+      <div>
+        <div class="player-card-wrap">
+          <div class="player-card" id="playerCard">
+            <div class="player-bg"></div>
+            <img id="playerPhoto" class="player-photo" alt="Player" />
+            <div class="player-info">
+              <div class="pill">
+                <span id="playerCategory">Category</span>
+              </div>
+              <div class="name" id="playerName">Player Name</div>
+              <div class="category">Base: <span id="playerBase">0</span></div>
+              <div class="stars" id="playerRating">★★★★★</div>
+              <div class="price">Current Bid: <span id="currentBid">0</span></div>
+            </div>
+            <div class="stamp sold" id="soldStamp">SOLD</div>
+            <div class="stamp unsold" id="unsoldStamp">UNSOLD</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="card" id="timerCard">
+          <div class="form-section" style="text-align:center">
+            <div class="timer">
+              <svg width="180" height="180">
+                <circle cx="90" cy="90" r="80" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+                <circle id="timerCircle" cx="90" cy="90" r="80" stroke="#22c55e" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="502" stroke-dashoffset="0"/>
+              </svg>
+              <div class="time-text" id="timeText">15</div>
+            </div>
+            <div class="controls">
+              <button class="button secondary" id="skipBtn">Skip Player</button>
+              <button class="button" id="nextBtn">Next Player</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Teams grid -->
+      <div>
+        <div class="card form-section">
+          <h3 class="section-title">Teams</h3>
+          <div id="teamsGrid" class="teams-grid" style="margin-top:10px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remaining Players Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-header">
+        <strong>Remaining Players</strong>
+        <button class="chip" id="closeModal">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="filter-row" id="filterRow"></div>
+        <div class="player-list" id="remainingList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/auctionEngine.js"></script>
+</body>
+</html>
